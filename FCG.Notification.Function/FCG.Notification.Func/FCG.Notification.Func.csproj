@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AzureFunctionsVersion>v4</AzureFunctionsVersion>
+		<!-- Obrigatório -->
+		<OutputType>Exe</OutputType>
+		<!-- Isolated worker precisa disso -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Core Worker -->
+		<PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.16.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.11.0" OutputItemType="Analyzer" />
+
+		<!-- Service Bus Binding -->
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.ServiceBus" Version="5.22.2" />
+		<PackageReference Include="Azure.Messaging.ServiceBus" Version="7.20.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="local.settings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
