@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<AzureFunctionsVersion>v4</AzureFunctionsVersion>
 		<!-- Obrigatório -->
-		<OutputType>Exe</OutputType>
+		<OutputType>Library</OutputType>
 		<!-- Isolated worker precisa disso -->
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
