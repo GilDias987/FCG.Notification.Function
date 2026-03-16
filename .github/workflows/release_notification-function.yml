@@ -30,7 +30,7 @@ jobs:
         shell: pwsh
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          dotnet build --configuration Release ./FCG.Notification.Function/FCG.Notification.Func/FCG.Notification.Func.csproj --output ./FCG.Notification.Function
+          dotnet publish ./FCG.Notification.Function/FCG.Notification.Func/FCG.Notification.Func.csproj -c Release -o ./output
           popd
       
       - name: 'Run Azure Functions Action'
@@ -39,5 +39,5 @@ jobs:
         with:
           app-name: 'notification-function'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/FCG.Notification.Function'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7A0F3AE2066E423CB7CF925C506B6FFF }}
