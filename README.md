@@ -14,7 +14,7 @@ Este serviço é um consumidor puramente reativo.
     * `PaymentProcessedEvent`: Se o status for `Approved`, dispara o e-mail de confirmação da compra com os detalhes do jogo.
 
 ## 3. Tecnologias
-* **Linguagem:** .NET 10
+* **Linguagem:** .NET 8
 * **Mensageria:** RabbitMQ (via MassTransit)
 * **Padrões:** MediatR, FluentValidation
 * **Documentação:** Swagger
